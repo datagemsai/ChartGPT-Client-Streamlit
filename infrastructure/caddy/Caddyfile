@@ -1,0 +1,35 @@
+{
+    http_port {$PORT}
+}
+
+www.{$base_domain} {
+	redir https://{$base_domain}{uri}
+}
+
+http://app.{$base_domain} {
+    tls {
+        dns cloudflare {$cloudflare_api_token}
+    }
+    reverse_proxy https://chartgpt-app-{$deployment}.***REMOVED*** {
+        header_up Host {upstream_hostport}
+    }
+}
+
+http://api.{$base_domain} {
+    tls {
+        dns cloudflare {$cloudflare_api_token}
+    }
+    reverse_proxy https://chartgpt-api-{$deployment}.***REMOVED*** {
+        header_up Host {upstream_hostport}
+        flush_interval -1
+    }
+}
+
+http://{$base_domain} {
+    tls {
+        dns cloudflare {$cloudflare_api_token}
+    }
+    reverse_proxy https://chartgpt-landing.***REMOVED*** {
+        header_up Host {upstream_hostport}
+    }
+}
