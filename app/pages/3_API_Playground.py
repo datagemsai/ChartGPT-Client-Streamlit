@@ -33,7 +33,7 @@ def main(user_id, user_email):
     # st.info("Coming soon! 🚀")
     # st.stop()
 
-    # Defining the host is optional and defaults to https://api.chartgpt.***REMOVED***
+    # Defining the host is optional and defaults to https://api.datagems.ai
     # See configuration.py for a list of all supported configuration parameters.
     configuration = chartgpt_client.Configuration(host=os.environ["CHARTGPT_API_HOST"])
 
@@ -63,7 +63,7 @@ def main(user_id, user_email):
         )
         question = st.text_input(
             "prompt",
-            value="Plot the average APR for the ***REMOVED*** protocol in the past 6 months.",
+            value="Plot the average APR for the NFTfi protocol in the past 6 months.",
         )
         output_type = st.selectbox(
             "output_type",

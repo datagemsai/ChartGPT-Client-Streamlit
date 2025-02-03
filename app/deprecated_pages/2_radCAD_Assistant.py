@@ -22,7 +22,7 @@ st.warning(
 def load_model() -> ConversationalRetrievalChain:
     # Load texts from DeepLake vectore store
     embeddings = OpenAIEmbeddings()
-    dataset_path = "hub://***REMOVED***/radcad_v3"
+    dataset_path = "hub:///radcad_v3"
     db = DeepLake(
         dataset_path=dataset_path, read_only=True, embedding_function=embeddings
     )

@@ -35,7 +35,7 @@ class Notices:
             This app is undergoing maintenance right now.
             Please check back later.
 
-            In the meantime, [check out our landing page](https://chartgpt.***REMOVED***)!
+            In the meantime, [check out our landing page](https://datagems.ai)!
             """
             )
             st.stop()

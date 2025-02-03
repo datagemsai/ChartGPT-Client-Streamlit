@@ -42,7 +42,7 @@ def requires_auth(f=lambda *args, **kwargs: None):
         user_email = None
         if not token:
             st.error(
-                "Authorisation failed. Please visit https://app.chartgpt.***REMOVED*** to log in."
+                "Authorisation failed. Please visit https://app.datagems.ai to log in."
             )
             st.stop()
         else:
@@ -172,9 +172,7 @@ def show_sign_up_form(user_email="") -> None:
 
 def is_user_admin() -> bool:
     return st.session_state["user_email"] in [
-        "ben@***REMOVED***",
-        "konrad@***REMOVED***",
-        "***REMOVED***",
+        "",
     ]
 
 
